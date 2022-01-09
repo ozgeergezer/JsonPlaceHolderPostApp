@@ -6,8 +6,8 @@ window.onload = async function () {
 };
 
 const loadData=async()=>{
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  data = await response.json();
+  const responsePost = await fetch("https://jsonplaceholder.typicode.com/posts");
+  data = await responsePost.json();
   console.log(data);
 
   const responseUser = await fetch("https://jsonplaceholder.typicode.com/users");

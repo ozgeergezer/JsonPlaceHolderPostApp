@@ -38,6 +38,7 @@ const Category=(data)=>{
 const userClick=(id)=>{
     const articleFind=document.getElementById('card');
     articleFind.innerHTML='';
+
     const dataItem =data.filter(x=>x.id==id);
     console.log(dataItem);
     dataItem.forEach((item)=>{ 
@@ -52,5 +53,12 @@ const userClick=(id)=>{
                  </div>`;
     articleFind.innerHTML=articleTemplate;
     });
-    
+}
+
+const search=(event)=>{
+    let searchText =event.target.value;
+    //showLoading();
+    const filteredData=data.filter(x=>new RegExp(searchText,"i").test(x.title));
+    //hideLoading();
+   list_(filteredData);
 }

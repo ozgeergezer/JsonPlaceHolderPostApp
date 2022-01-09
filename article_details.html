@@ -15,19 +15,21 @@
 <body>
     <div id="menu"></div>
 
-    <div class="div container mt-3">
-    <div class="row">
-        <div class="col md-3">
-            <div id="list" class="list-group">
-
-
-            </div>
-               
+    <!-- <div id="loading" class="flex-column align-items-center  justify-content-center " style=" position: absolute;width: 100%; z-index: 1; height: 100vh; background-color: rgba(255, 255, 255, 0.733);">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
+    </div> -->
 
+    <div class="container mt-3">
+    <div class="row">
         <div class="col-md-9">
             <div id="card" >
-                        
+            </div>
+        </div>
+        <div class="col md-3">
+            <input type="search" class="mb-2 form-control ds-input" id="search-input" onkeyup="search(event)" placeholder="Search docs...">
+            <div id="list" class="list-group">
             </div>
         </div>
     </div>
