@@ -33,12 +33,13 @@ const loadData=async()=>{
 </h2>
 <div
   id="collapse_${item.id}"
-  class="accordion-collapse collapse show"
+  class="accordion-collapse collapse"
   aria-labelledby="heading_${item.id}"
   data-bs-parent="#accordionExample"
 >
   <div class="accordion-body">
     ${item?.body}
+    <div class="d-flex justify-content-end"><a type="button" href="/article_details.html/${item?.id}" class="btn btn-dark">Details</a></div>
   </div>
 </div>
 </div>`;
