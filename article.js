@@ -1,17 +1,33 @@
 var data = [];
-var dataUser=[];
+var dataUser = [];
 
 window.onload = async function () {
-  loadData();
+  showLoading();
+  await loadData();
+  hideLoading();
 };
 
-const loadData=async()=>{
-  const responsePost = await fetch("https://jsonplaceholder.typicode.com/posts");
+const showLoading = () => {
+  const load = document.getElementById("loading");
+  load.classList.add("d-flex");
+};
+
+const hideLoading = () => {
+  const hide = document.getElementById("loading");
+  hide.classList.add("d-none");
+};
+
+const loadData = async () => {
+  const responsePost = await fetch(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
   data = await responsePost.json();
   console.log(data);
 
-  const responseUser = await fetch("https://jsonplaceholder.typicode.com/users");
-  dataUser=await responseUser.json();
+  const responseUser = await fetch(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+  dataUser = await responseUser.json();
   console.log(dataUser);
 
   const articles = document.getElementById("accordionExample");
@@ -39,10 +55,10 @@ const loadData=async()=>{
 >
   <div class="accordion-body">
     ${item?.body}
-    <div class="d-flex justify-content-end"><a type="button" href="/article_details.html/${item?.id}" class="btn btn-dark">Details</a></div>
+    <div class="d-flex justify-content-end"><a type="button" href="/article_details.html?id=${item?.id}" class="btn btn-dark">Details</a></div>
   </div>
 </div>
 </div>`;
     articles.innerHTML += template;
   });
-}
+};

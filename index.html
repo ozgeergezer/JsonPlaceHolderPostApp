@@ -12,8 +12,23 @@
     />
     <title>Home</title>
   </head>
-  <body>
     <div id="menu"></div>
+
+    <div
+      id="loading"
+      class="flex-column align-items-center justify-content-center"
+      style="
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.733);
+      "
+    >
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
 
     <div class="container accordion mt-3" id="accordionExample"></div>
 
