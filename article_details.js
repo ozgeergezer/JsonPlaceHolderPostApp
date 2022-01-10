@@ -11,11 +11,10 @@ window.onload = async () => {
   await Category(data);
   userClick();
 
-  document.getElementById("title").innerHTML = dataParam.title;
-  document.getElementById("body").innerHTML = dataParam.body;
+  // document.getElementById("title").innerHTML = dataParam.title;
+  // document.getElementById("body").innerHTML = dataParam.body;
 
   const card = document.getElementById("card");
-
   card.innerHTML = ` <div class="card border-dark mb-3"> <div class="card-header ">${dataParam.title}</div>
   <div class="card-body text-dark">
   <h5 class="card-title">${dataParam.title}</h5>
